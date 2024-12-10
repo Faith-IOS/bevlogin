@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset ="UTF-8">
+    <meta name ="viewport" content ="width=device-width, initial-scale = 1.0">
+    <title>Log in</title>
+    
+</head>
+<body>
+    <form action="">
+        <table id="Log In"> 
+            <tr>
+                <td>
+                    <h4>Log In If You Have An Account Already</h4>
+                </td>
+            </tr>   
+            <tr>
+                <td>
+                    <input type="text" name="" id="logIn_username" placeholder="Username...">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="password" name="" id="logIn_password"placeholder="Password...">
+                </td>
+            </tr>
+                
+                   
+            <tr>
+                <td>
+                    <button onClick="logIn()">LOG IN</button>
+                </td>
+            </tr>
+           
+        </table>
+    
+        
+        <table id="Sign Up">
+            <tr>
+                <td>
+                    <h4>Sign Up An Account</h4>
+                </td>
+            </tr> 
+            <tr>
+                <td>
+                    <input type="text" name="" id="txt_username" placeholder="Username...">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="password" name="" id="txt_password"placeholder="Password...">
+                </td>
+            </tr>
+                
+                   
+            <tr>
+                <td>
+                    <button onClick="signUp()">SIGN UP</button>
+                </td>
+            </tr>
+           
+        </table>
+        
+        
+    </form>
+</body>
+</html>
+<style>
+    table{
+        height:50vh;    
+        margin-top:50px;
+        border:5px solid white;
+        
+        background-image:linear-gradient(#40e0ff,#15ffa1bd);
+        width:40vh;
+        margin-right:auto;
+        margin-left:auto;
+        border:10px ;
+        border-radius:20px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        flex-direction:column; 
+        
+    }
+    
+    input{
+        
+        margin:10px;
+        border-radius:10px;
+        height:30px;
+        width:100%;
+        
+    }
+    
+    button{
+    
+        
+        margin:10px;
+        border-radius:10px;
+        height:30px;    
+        width:100%;
+        background-image:linear-gradient(to right,#6655ff,#a555ff);
+        font-size:20px;
+        color:white;
+        font-weight:bold;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        flex-direction:column;
+              
+           
+    } 
+    
+    h4{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        
+        
+    }
+    
+               
+      
+            
+</style>
+    
+
+    <script>            
+        function logIn(){
+            <!-- alert("ok"); -->
+            const LIusername=document.getElementById("logIn_username").value;
+            const LIpassword=document.getElementById("logIn_password").value;
+            
+            
+            
+            if(username&&password!=""){
+                <!-- alert("Username is: "+ user); -->
+                <!-- alert("Password is:" + pass); -->
+                const data =JSON.parse(localStorage.getItem("data"))|| [];
+                data.push({
+                    username: username,
+                    password: password 
+                });
+               
+                const ok=localStorage.setItem('data', JSON.stringify(data));
+                console.log()
+                
+            } else{
+                alert("Sign up first gurl")
+            }
+        }
+        
+        function signUp(){
+            <!-- alert("ok"); -->
+            const SIusername=document.getElementById("txt_username").value;
+            const SIpassword=document.getElementById("txt_password").value;
+            
+            
+            
+            if(username&&password!=""){
+                <!-- alert("Username is: "+ user); -->
+                <!-- alert("Password is:" + pass); -->
+                const data =JSON.parse(localStorage.getItem("data"))|| [];
+                data.push({
+                    username: username,
+                    password: password 
+                });
+               
+                const ok=localStorage.setItem('data', JSON.stringify(data));
+                console.log()
+                
+            } else{
+                alert("Gurl this is not iconic of you at all")
+            }
+        }
+            
+        
+    </script>
